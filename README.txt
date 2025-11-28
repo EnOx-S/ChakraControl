@@ -1,6 +1,4 @@
 # Chakra Control
-[![Minecraft](https://img.icons8.com/color/96/minecraft-grass-cube.png)](https://deepwiki.com/EnOx-S/ChakraControl/tree/main)
-
 Chakra Control is a Minecraft Forge mod for version 1.12.2 that introduces new character movement abilities inspired by the Naruto series. By toggling "Chakra Control," players can manipulate their environment and movement in unique ways.
 
 ## Features
