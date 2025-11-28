@@ -1,53 +1,72 @@
--------------------------------------------
-Source installation information for modders
--------------------------------------------
-This code follows the Minecraft Forge installation methodology. It will apply
-some small patches to the vanilla MCP source code, giving you and it access 
-to some of the data and functions you need to build a successful mod.
+# Chakra Control
+[![Minecraft](https://img.icons8.com/color/96/minecraft-grass-cube.png)](https://deepwiki.com/EnOx-S/ChakraControl/tree/main)
 
-Note also that the patches are built against "unrenamed" MCP source code (aka
-srgnames) - this means that you will not be able to read them directly against
-normal code.
+Chakra Control is a Minecraft Forge mod for version 1.12.2 that introduces new character movement abilities inspired by the Naruto series. By toggling "Chakra Control," players can manipulate their environment and movement in unique ways.
 
-Source pack installation information:
+## Features
 
-Standalone source installation
-==============================
+*   **Walk on Water**: While Chakra Control is active, players can stand and walk on water surfaces without falling through.
+*   **Wall Jump**: When moving against a wall with Chakra Control active, players receive a vertical boost, allowing them to scale vertical surfaces.
+*   **Toggleable State**: Players can enable or disable Chakra Control at any time using a configurable keybinding.
+*   **Server-Side Validation**: All abilities are processed on the server, ensuring they work correctly in multiplayer environments.
 
-See the Forge Documentation online for more detailed instructions:
-http://mcforge.readthedocs.io/en/latest/gettingstarted/
+## Usage
 
-Step 1: Open your command-line and browse to the folder where you extracted the zip file.
+1.  In Minecraft, go to `Options...` > `Controls...`.
+2.  Scroll down to the "ChakraMod" category.
+3.  Assign a key to the "Chakra Control" action.
+4.  Press the configured key in-game to toggle the abilities on or off. A chat message will confirm the current state.
 
-Step 2: You're left with a choice.
-If you prefer to use Eclipse:
-1. Run the following command: "gradlew genEclipseRuns" (./gradlew genEclipseRuns if you are on Mac/Linux)
-2. Open Eclipse, Import > Existing Gradle Project > Select Folder 
-   or run "gradlew eclipse" to generate the project.
-(Current Issue)
-4. Open Project > Run/Debug Settings > Edit runClient and runServer > Environment
-5. Edit MOD_CLASSES to show [modid]%%[Path]; 2 times rather then the generated 4.
+## Developer Setup
 
-If you prefer to use IntelliJ:
-1. Open IDEA, and import project.
-2. Select your build.gradle file and have it import.
-3. Run the following command: "gradlew genIntellijRuns" (./gradlew genIntellijRuns if you are on Mac/Linux)
-4. Refresh the Gradle Project in IDEA if required.
+This project uses the Minecraft Forge MDK. The following instructions will guide you through setting up a development environment.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can run "gradlew --refresh-dependencies" to refresh the local cache. "gradlew clean" to reset everything {this does not affect your code} and then start the processs again.
+### Prerequisites
+*   Java Development Kit (JDK) 8
 
-Should it still not work, 
-Refer to #ForgeGradle on EsperNet for more information about the gradle environment.
-or the Forge Project Discord discord.gg/UvedJ9m
+### 1. Setup
+Open a command line or terminal in the root directory of the repository and run the appropriate setup command for your IDE.
 
-Forge source installation
-=========================
-MinecraftForge ships with this code and installs it as part of the forge
-installation process, no further action is required on your part.
+**For Eclipse:**
+```bash
+# For Windows
+gradlew genEclipseRuns
 
-LexManos' Install Video
-=======================
-https://www.youtube.com/watch?v=8VEdtQLuLO0&feature=youtu.be
+# For macOS/Linux
+./gradlew genEclipseRuns
+```
+After the command completes, import the project into Eclipse as an existing Gradle project.
 
-For more details update more often refer to the Forge Forums:
-http://www.minecraftforge.net/forum/index.php/topic,14048.0.html
+**For IntelliJ IDEA:**
+```bash
+# For Windows
+gradlew genIntellijRuns
+
+# For macOS/Linux
+./gradlew genIntellijRuns
+```
+After the command completes, open your `build.gradle` file in IntelliJ and import the project. Refresh the Gradle project if prompted.
+
+### 2. General Commands
+
+*   **Refresh Dependencies**: If you encounter issues with missing libraries, run the following command to refresh the local cache.
+    ```bash
+    # Windows
+    gradlew --refresh-dependencies
+    
+    # macOS/Linux
+    ./gradlew --refresh-dependencies
+    ```
+
+*   **Clean Workspace**: To reset the workspace (this will not affect your source code), run:
+    ```bash
+    # Windows
+    gradlew clean
+    
+    # macOS/Linux
+    ./gradlew clean
+    ```
+
+## License
+
+This project is licensed under the GNU General Public License v3.0. See the [LICENSE](./LICENSE) file for details.
