@@ -34,8 +34,6 @@ public class CommonProxy {
 	            player.motionY = 0.01d;
 	            player.onGround = true;
 	        }
-	
-	        System.out.println(player.collidedHorizontally);
 	                
 	                // Poussée contre un mur -> wall jump
 	       if (player.collidedHorizontally) {
