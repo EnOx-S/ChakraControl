@@ -9,7 +9,11 @@ public class DataChakraPlayer {
 	public static final DataParameter<Boolean> CHAKRA_CONTROL = EntityDataManager.createKey(EntityPlayer.class, DataSerializers.BOOLEAN);
 	
 	public static void register(EntityPlayer p) {
-		p.getDataManager().register(CHAKRA_CONTROL, false);
+		try {
+            p.getDataManager().register(CHAKRA_CONTROL, false);
+        } catch (IllegalArgumentException ex) {
+            // déjà enregistré — on ignore
+        }
 	}
 	
 	
